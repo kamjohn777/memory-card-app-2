@@ -2,32 +2,61 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Card from './Components/Card'
+import GameRules from './Components/GameRules'
 
 function App() {
   const [count, setCount] = useState(0)
 
+  const [isLoadingOver, setIsLoadingOver] = useState(false);
+  const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+  const [isSoundPlaying, setIsSoundPlaying] = useState(true);
+  const [difficultyLevel, setDifficultyLevel] = useState([]);
+  const [charactersToPlayWith, setCharactersToPlayWith] = useState([]);
+  const [charactersToDisplay, setCharactersToDisplay] = useState([]);
+  const [score, setScore] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
+
+  
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setIsLoadingOver(true);
+  //   }, 3700);
+  // }, []);
+
+
+  
+  const goBackToStartPage = () => {
+    setDifficultyLevel([]);
+    charactersToPlayWith.forEach(character => {
+      character.clicked = false;
+  });
+  };
+
+  const playFlip = () => {
+    if(isSoundPlaying) {
+      const audio = new Audio(flipSound);
+      audio.volume = 0.2;
+      audio.play();
+    }
+  };
+
+  const playClick = () => {
+    if(isSoundPlaying) {
+      const audio = new Audio(clickSound);
+      audio.volume = 0.07;
+      audio.play();
+    }
+  };
+
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <Card />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <footer className='footer-class'>
+      <GameRules />
+      </footer>
     </>
   )
 }

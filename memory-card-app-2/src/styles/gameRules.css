@@ -1,0 +1,70 @@
+#how-to-play-btn {
+    position: relative;
+    border-radius: 50%;
+    /* left: 40%; */
+    width: 86px;
+    background-color: orange;
+}
+
+#ruleBtn {
+    border-radius: 50%;
+    width: 86px;
+    height: 86px;
+    background-color: orange;
+}
+
+.info-div {
+    position: relative;
+    left: 40%;
+    height: fit-content;
+    /* width: 940px; */
+}
+
+.info-div img {
+    height: 175px;
+}
+
+.instructions {
+    /* bottom: 80px;
+    margin-left: 40px;
+    position: fixed;
+    right: 260px; */
+    /* bottom: 182px;
+    margin-left: 62px;
+    position: fixed;
+    right: 313px; */
+    /* top: 7px;
+    margin-left: 63px;
+    position: relative;
+    right: 318px; */
+    /* top: 61px;
+    margin-left: 63px;
+    position: relative;
+    right: 47px; */
+    top: 61px;
+    margin-left: 63px;
+    position: relative;
+    right: 47px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.instructions div {
+    background-color: #eb621c;
+    border-radius: 20px;
+    box-shadow: 0 0 8px #424242, 0 0 8px #424242;
+    color: #fff;
+    padding: 7px;
+    text-align: center;
+    width: 340px;
+}
+
+.instructions p {
+    font-family: 'Kablammo', cursive;
+font-family: 'Kanit', sans-serif;
+}
+
+.hidden-rules {
+    display: none;
+}
